@@ -22,6 +22,12 @@ public class Balloon : MonoBehaviour
         {
             myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, flapStrength);
         }
+
+        if(transform.position.y > 13 || transform.position.y < -13)
+        {
+            logic.gameOver();
+            ballisAlive = false;
+        }
      
     }
     private void OnCollisionEnter2D(Collision2D collision)
