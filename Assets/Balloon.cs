@@ -33,13 +33,9 @@ public class Balloon : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(!hasPlayedPop)
-        {
             logic.gameOver();
             balloonPop.Play();
-            ballisAlive = true;
-        }
-        ballisAlive = false;
+        ballisAlive = true;
     }
 
 }
