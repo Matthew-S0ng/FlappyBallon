@@ -9,8 +9,17 @@ public class Main : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+    public void GoToSettingMenu()
+    {
+        SceneManager.LoadScene("SettingMenu");
+    }
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
     public void QuitGame()
     {
         Application.Quit();
     }
+
 }

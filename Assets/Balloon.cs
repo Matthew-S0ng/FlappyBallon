@@ -8,6 +8,8 @@ public class Balloon : MonoBehaviour
     public float flapStrength;
     public LogicManage logic;
     public bool ballisAlive = true;
+    [SerializeField] private AudioSource balloonPop;
+    private bool hasPlayedPop = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,11 +30,16 @@ public class Balloon : MonoBehaviour
             logic.gameOver();
             ballisAlive = false;
         }
-     
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        logic.gameOver();
+        if(!hasPlayedPop)
+        {
+            logic.gameOver();
+            balloonPop.Play();
+            ballisAlive = true;
+        }
         ballisAlive = false;
     }
+
 }

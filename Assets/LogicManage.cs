@@ -9,14 +9,14 @@ public class LogicManage : MonoBehaviour
     public int playerScore = 0;
     public Text score;
     public GameObject GameOver;
-    public AudioSource golfclap;
+    [SerializeField] private AudioSource ding;
 
-    [ContextMenu("Increase Score")]
+     [ContextMenu("Increase Score")]
     public void addScore()
     {
-        playerScore = playerScore + 1;
-        score.text = playerScore.ToString();
-
+        playerScore += 1;
+         score.text = playerScore.ToString();
+         ding.Play();
     }
     public void restartGame()
     {

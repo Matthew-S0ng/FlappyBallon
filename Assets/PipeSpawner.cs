@@ -5,13 +5,15 @@ using UnityEngine;
 public class PipeSpawner : MonoBehaviour
 {
     public GameObject Pipe;
-    public float spawnRate = 2;
-    private float timer = 0;
-    public float heightOffset = 10;
+    public Pipe pipes;
+    public float spawnRate = 2f;
+    private float timer = 0f;
+    public float heightOffset = 10f;
 
     // Start is called before the first frame update
     void Start()
     {
+        
         spawnPipe();
     }
 
@@ -27,7 +29,7 @@ public class PipeSpawner : MonoBehaviour
         else
         {
             spawnPipe();
-            timer = 0;
+            timer = 0f;
         }
     }
         void spawnPipe()
