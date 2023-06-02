@@ -6,8 +6,8 @@ public class DartsSpawner : MonoBehaviour
 {
     public GameObject Dart;
     public LogicManage logic;
-    public float spawnRate = 2;
-    private float timer = 0;
+    public float spawnRate = 2.75f;
+    private float timer = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +18,7 @@ public class DartsSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(logic.playerScore > 10)
+        if(logic.playerScore >= 5)
         {
             if (timer < spawnRate)
             {

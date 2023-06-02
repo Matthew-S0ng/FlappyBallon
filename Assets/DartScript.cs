@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DartScript : MonoBehaviour
 {
-    public float moveSpeed = 5;
-    public float deadZone = -45;
+    public float moveSpeed = 8f;
+    public float deadZone = -45f;
     // Start is called before the first frame update
     void Start()
     {

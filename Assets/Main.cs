@@ -7,15 +7,11 @@ public class Main : MonoBehaviour
 {
     public void PlayGame()
     {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+    }
+    public void GoToHow()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-    public void GoToSettingMenu()
-    {
-        SceneManager.LoadScene("SettingMenu");
-    }
-    public void GoToMainMenu()
-    {
-        SceneManager.LoadScene("MainMenu");
     }
     public void QuitGame()
     {

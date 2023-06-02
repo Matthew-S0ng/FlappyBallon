@@ -7,16 +7,28 @@ using UnityEngine.SceneManagement;
 public class LogicManage : MonoBehaviour
 {
     public int playerScore = 0;
+    public int highScore;
     public Text score;
+    public Text highScoreText;
     public GameObject GameOver;
     [SerializeField] private AudioSource ding;
+    public Balloon balloon;
 
-     [ContextMenu("Increase Score")]
+    void Start()
+    {
+        balloon = GameObject.FindGameObjectWithTag("ballon").GetComponent<Balloon>();
+    }
+
+
+    [ContextMenu("Increase Score")]
     public void addScore()
     {
-        playerScore += 1;
-         score.text = playerScore.ToString();
-         ding.Play();
+        if(balloon.ballisAlive == true)
+        {
+            playerScore += 1;
+            score.text = playerScore.ToString();
+            ding.Play();
+        }
     }
     public void restartGame()
     {
